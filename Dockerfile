@@ -10,7 +10,7 @@ RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
 # Install mysql
-RUN add-apt-repository -y ppa:ondrej/mysql-5.6
+RUN add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty universe'
 RUN apt-get update
 RUN echo "mysql-server-5.6 mysql-server/root_password password root" | debconf-set-selections
 RUN echo "mysql-server-5.6 mysql-server/root_password_again password root" | debconf-set-selections
